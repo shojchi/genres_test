@@ -1,0 +1,37 @@
+<header>
+  <div class="left_toolbar">
+    <div class="left_toolbar__back" routerLink="/genres">Back</div>
+    <label>
+      <input type="search">
+    </label>
+  </div>
+  <div class="right_toolbar">
+    <div id="cart__counter" class="like__counter ">
+      {{cartCounter}}
+    </div>
+    <div class="likeIcon">
+      <fa-icon [icon]="HeartIcon"></fa-icon>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="albumCard">
+    <div *ngFor="let album of content; let i = index;"
+         (mouseenter)="isHovered = i"
+         (mouseleave)="isHovered = null">
+
+      <div [hidden]="isHovered !== i" class="albumAction">
+        <div class="albumActionWrapper">
+          <span class="albumActionItem">{{this.album.name}}</span>
+          <span class="albumActionItem">{{this.album.artist.name}}</span>
+          <span class="albumActionItem likeItem"><fa-icon [icon]="HeartIcon"></fa-icon></span>
+        </div>
+      </div>
+
+      <img [hidden]="isHovered === i" src="{{this.album.image[3]['#text']}}" alt="{{this.album.name}}">
+    </div>
+  </div>
+
+</main>

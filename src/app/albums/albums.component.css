@@ -1,0 +1,32 @@
+.albumCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* эквивалентно grid-template-columns: 25% 25% 25% 25%; */
+  padding: 20px;
+}
+
+img {
+  padding: 5px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.albumAction {
+  height: 100%;
+  width: 100%;
+  background-color: #131212;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.albumActionWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.albumActionItem {
+  padding-top: 15px;
+}
